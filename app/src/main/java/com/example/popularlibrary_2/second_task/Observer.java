@@ -1,5 +1,5 @@
-package ru.leonidivankin.popularLibrary2.observer;
+package com.example.popularlibrary_2.second_task;
 
 public interface Observer {
-    void updateData(String name, String num);
+    void updateData(String spamTheme, String spamText, int subscriberIndex);
 }

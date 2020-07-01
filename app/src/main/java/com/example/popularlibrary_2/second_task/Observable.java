@@ -1,7 +1,7 @@
-package ru.leonidivankin.popularLibrary2.observer;
+package com.example.popularlibrary_2.second_task;
 
 public interface Observable {
-    void registerObserver(Observer observer);
-    void unregisterObserver(Observer observer);
+    void subscribe(Observer observer);
+    void unsubscribe(Observer observer);
     void notifyAllObservers();
 }
