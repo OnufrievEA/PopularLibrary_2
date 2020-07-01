@@ -9,7 +9,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.schedulers.Schedulers;
 
-public class Presenter {
+public class SpamPresenter {
     private static final String TAG = "SpamPresenter";
 
 
@@ -21,19 +21,15 @@ public class Presenter {
                 try {
                     for (int i = 0; i < 5; i++) {
                         TimeUnit.SECONDS.sleep(1);
-                        String cup = "cup: " + i;
-                        Log.d(TAG, "getCupOfTea: " + Thread.currentThread().getName() + ": " + cup);
-                        emitter.onNext(cup);
+                        String spamMessage = "spam_message: " + i;
+                        Log.d(TAG, "getSpam: " + Thread.currentThread().getName() + ": " + spamMessage);
+                        emitter.onNext(spamMessage);
                     }
-
-                    emitter.onError(new NullPointerException());
-
-                    emitter.onNext("cup: 5");
 
                     emitter.onComplete();
 
                 } catch (InterruptedException e) {
-                    Log.d(TAG, "getCupOfCoffee: not disposed");
+                    Log.d(TAG, "getSpam: not disposed");
                 }
             }
         }).subscribeOn(Schedulers.io());
